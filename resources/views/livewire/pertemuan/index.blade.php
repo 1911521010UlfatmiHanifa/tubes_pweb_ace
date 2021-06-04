@@ -68,6 +68,7 @@
                                 </td>
                                     <td>
                                         <button onclick="location.href=' {{ route( 'dpertemuan', [$pertemuan->pertemuan_id]) }} '" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                                        <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 -2 20 23"><path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708z"></path></svg>
                                         Detail
                                         </button>
                                     </td>

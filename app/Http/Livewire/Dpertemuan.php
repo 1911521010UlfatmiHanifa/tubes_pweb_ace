@@ -55,4 +55,58 @@ class Dpertemuan extends Component
             'nama' => $nama
         ]);
     }
+
+    public function upcsv(){
+        
+        $fileName = $_FILES["file"]["tmp_name"];
+        $namaFile = $_FILES["file"]["name"];
+        $ekstensiValid = 'csv';
+        $ekstensiFile = explode('.', $namaFile);
+        $ekstensiFile = strtolower(end($ekstensiFile));
+        
+        if ($ekstensiFile != $ekstensiValid) {
+            print("Pilih Ekstensi File Yang Sesuai");
+        } 
+        else {
+            $file = fopen($fileName, "r");
+            $skipLines = 7;
+            $lineNum = 1;
+            while (fgetcsv($file)) {
+                if ($lineNum > $skipLines) {
+                    break;
+                }
+                $lineNum++;
+            }
+            $data = array();
+
+            $i=0;
+            while (($column = fgetcsv($file, 1000, ";")) !== FALSE) {
+                $num = count($column);
+                $num--;
+                for ($c = 0 ; $c < $num ; $c++){
+                    if ($c == 0) {
+                        $data[$i][$c] = substr($column[$c], -10);
+                    }
+                    if ($c == 1) {
+                        $data[$i][$c] = explode(",", $column[$c]);
+                        if ($c == 1) {
+                            $data[$i][$c] = explode(" ", $column[$c]);
+                        }
+                    }
+                    if ($c == 2) {
+                        $data[$i][$c] = explode(",",$column[$c]);
+                        if ($c == 2) {
+                            $data[$i][$c] = explode(" ", $column[$c]);
+                        }
+                    }
+
+                    $data[$i][] = $column[$c];
+                }
+                $i++;
+            }
+            $check = count ($data);
+        }
+
+    }
+
 }
