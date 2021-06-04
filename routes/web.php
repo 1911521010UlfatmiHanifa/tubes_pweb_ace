@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('users', \App\Http\Controllers\UsersController::class);
 
+    Route::get('kelas',Kelas::class)->name('kelas');
     Route::get('dkelas/{kelas_id}',Dkelas::class)->name('dkelas');
     Route::get('dmahasiswa/{kelas_id}',Dmahasiswa::class)->name('dmahasiswa');
     Route::get('krs',Krs::class)->name('krs');
