@@ -10,7 +10,7 @@
 
 
       <div class="inline-block align-bottom bg-white text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-        <form>
+        <form action="{{route('absen',[$kelas->kelas_id,$pertemuan->pertemuan_id])}}" method="POST" enctype="multipart/form-data">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <div>
               <h1 class="font-bold text-center mb-4">Upload CSV</h1>

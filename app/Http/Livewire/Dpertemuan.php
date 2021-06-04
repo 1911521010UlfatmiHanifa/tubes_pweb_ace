@@ -56,7 +56,7 @@ class Dpertemuan extends Component
         ]);
     }
 
-    public function upcsv(){
+    public function upcsv(Request $request,$kelas_id,$pertemuan_id){
         
         $fileName = $_FILES["file"]["tmp_name"];
         $namaFile = $_FILES["file"]["name"];

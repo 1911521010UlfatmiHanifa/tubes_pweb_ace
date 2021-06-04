@@ -42,4 +42,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('mahasiswa',Mahasiswa::class)->name('mahasiswa');
     Route::get('pertemuan/{kelas_id}',Pertemuan::class)->name('pertemuan');
     Route::get('dpertemuan/{pertemuan_id}',Dpertemuan::class)->name('dpertemuan');
+
+    Route::post('dpertemuan/{kelas_id}/{pertemuan_id}/upload',[Dpertemuan::class,'upcsv'])->name('absen');
 });
