@@ -40,4 +40,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('krs',Krs::class)->name('krs');
     Route::get('dkrs/{krs_id}',Dkrs::class)->name('dkrs');
     Route::get('mahasiswa',Mahasiswa::class)->name('mahasiswa');
+    Route::get('pertemuan/{kelas_id}',Pertemuan::class)->name('pertemuan');
+    Route::get('dpertemuan/{pertemuan_id}',Dpertemuan::class)->name('dpertemuan');
 });
