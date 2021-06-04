@@ -38,5 +38,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('dmahasiswa/{kelas_id}',Dmahasiswa::class)->name('dmahasiswa');
     Route::get('krs',Krs::class)->name('krs');
     Route::get('dkrs/{krs_id}',Dkrs::class)->name('dkrs');
-
+    Route::get('mahasiswa',Mahasiswa::class)->name('mahasiswa');
 });
